@@ -1,7 +1,33 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app.default {
+  background-image: url('/images/weather-forecast.jpg'); /* imagine default */
+  background-size: cover;
+  background-position: center;
+}
+
+.app.cold {
+  text-align: center;
+  background-image: url('/images/cold.jpg'); /* imaginea pentru vreme rece */
+  background-size: cover;
+  background-position: bottom;
+  transition: background-image 0.4s ease-out;
+  min-height: 100vh;
+}
+
+.app.warm {
+  background-image: url('/images/warm.jpg'); /* imaginea pentru vreme caldă */
+}
+
+/* stiluri pentru header și logo */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +40,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgba(40, 44, 52, 0.8); /* transparent pentru fundal */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,6 +54,7 @@
   color: #61dafb;
 }
 
+/* animatie pentru logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +62,65 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* caseta de căutare */
+.search-box {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.search-box .search-bar {
+  background-color: rgba(255, 255, 255, 0.8); /* fundal semi-transparent alb */
+  color: #333; /* culoarea textului */
+  transition: all 0.3s ease-in-out; /* efect de tranziție */
+  width: 90%;  /* lățime */
+  max-width: 500px;  /* lățime maximă*/
+  padding: 15px;  
+  font-size: 22px;  
+  border: 2px solid #ff9800; /* o margine vizibilă */
+  border-radius: 12px;  /* colțuri rotunjite */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* umbră pentru efect */
+  outline: none;
+}
+
+/* culoare la focus (când utilizatorul scrie în input) */
+.search-box .search-bar:focus {
+  background-color: white;
+  border-color: #ff5722; /* border la focus */
+  box-shadow: 0px 0px 10px rgba(255, 87, 34, 0.8);
+  outline: none; /* elimină conturul implicit */
+}
+
+/* informații despre locație */
+.location-box .location {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.location-box .date {
+  font-size: 20px;
+  font-style: italic;
+  color: white;
+}
+
+/* temperatura și condițiile meteo */
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temp {
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.weather-box .weather {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
