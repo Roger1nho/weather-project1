@@ -8,17 +8,40 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.app {
-  background-image: url('./images/cold.jfif');
-  background-size: cover;
-  background-position: bottom;
+.app.default {
+  background-image: url('../images/weather-forecast.jpg');
   transition: background-image 0.4s ease-out;
   min-height: 100vh;
-  background-color: #87CEEB
+  *background-color: #87CEEB;
+  background-size: cover; /* imaginea acoperă tot ecranul */
+  background-position: center; /* centrează imaginea */
+  background-repeat: no-repeat; /* evită repetarea imaginii */
+  image-rendering: crisp-edges; /* imbunătățește claritatea */
+}
+
+.app.cold {
+  background-image: url('../images/cold.jpg');
+  transition: background-image 0.4s ease-out;
+  min-height: 100vh;
+  *background-color: #87CEEB;
+  background-size: cover; /* imaginea acoperă tot ecranul */
+  background-position: center; /* centrează imaginea */
+  background-repeat: no-repeat; /* evită repetarea imaginii */
+  image-rendering: crisp-edges; /* imbunătățește claritatea */
 }
 
 .app.warm {
-  background-image: url('./images/warm.jfif');
+  background-image: url('../images/warm.jpg');
+  background-size: cover; /* imaginea acoperă tot ecranul */
+  background-position: center; /* centrează imaginea */
+  background-repeat: no-repeat; /* evită repetarea imaginii */
+  image-rendering: crisp-edges; /* imbunătățește claritatea */
+}
+
+.app.default, .app.cold {
+  filter: contrast(110%) brightness(105%);
+/*  crește contrastul pentru a face detaliile mai vizibile.
+    crește luminozitatea pentru a elimina efectul de blur.*/
 }
 
 main {
@@ -33,30 +56,27 @@ main {
 }
 
 .search-box .search-bar {
-  display: block;
-  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundal semi-transparent alb */
+  color: #040404; /* Culoarea textului */
+  transition: all 0.3s ease-in-out;
+  width: 90%;  /* lățime */
+  max-width: 500px;  /* lățime */
   padding: 15px;
-
-  appearance: none;
-  background: none;
-  border: none;
+  font-size: 22px;
+  border: 2px solid #ff9800;
+  border-radius: 12px;  /* colțuri rotunjite */
+  box-shadow: 4px 4px 10px rgb(39, 38, 38); /* umbră pentru efect */
   outline: none;
-
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 0px 0px 16px 16px;
-  margin-top: -25px;
-
-  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
-
-  color: #313131;
-  font-size: 20px;
-
-  transition: 0.4s ease;
 }
 
+/* culoare la focus (când utilizatorul scrie în input) */
 .search-box .search-bar:focus {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: white;
+  border-color: #ff5722; /* Border la focus */
+  box-shadow: 0px 0px 10px rgba(246, 127, 90, 0.8);
+  outline: none;
 }
+
 
 .location-box .location{
   color:#FFF;
